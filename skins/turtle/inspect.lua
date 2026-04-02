@@ -55,7 +55,7 @@ pfUI:RegisterSkin("Inspect Turtle", "vanilla", function()
        pfUI.api.SkinScrollbar(TWTalentFrameScrollFrameScrollBar)
     end
 
-    for i = 1, MAX_NUM_TALENTS do
+    for i = 1, (MAX_NUM_TALENTS or 100) do
       local talent = _G["TWTalentFrameTalent" .. i]
       if talent then
         pfUI.api.StripTextures(talent)
