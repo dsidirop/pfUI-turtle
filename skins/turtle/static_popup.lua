@@ -1,4 +1,4 @@
-pfUI:RegisterSkin("Static popups Turtle", "vanilla", function()
+pfUI:RegisterSkin("Static Popups Turtle", "vanilla", function()
     -- skin is loaded after pfUI is booted - so check if it is disabled ourselves
     if (pfUI_config["disabled"] and
             pfUI_config["disabled"]["skin_Static popups Turtle"] == "1") then
@@ -7,13 +7,13 @@ pfUI:RegisterSkin("Static popups Turtle", "vanilla", function()
 
     -- adapted for turtle wow StaticPopup2
     -- https://github.com/shagu/pfUI/blob/master/skins/blizzard/popup_dialogs.lua
-    for i = 1, STATICPOPUP2_NUMDIALOGS do
-        local money = _G["StaticPopup2" .. i .. "MoneyInputFrame"]
+    for i = 1, STATICPOPUP_NUMDIALOGS do -- twow doesnt support STATICPOPUP2_NUMDIALOGS since 2026-03
+        local money = _G["StaticPopup" .. i .. "MoneyInputFrame"]
         if money then -- turtle
             SkinMoneyInputFrame(money)
         end
 
-        local dialog = _G["StaticPopup2" .. i]
+        local dialog = _G["StaticPopup" .. i]
         pfUI.api.CreateBackdrop(dialog, nil, true, .75)
         pfUI.api.CreateBackdropShadow(dialog)
 
