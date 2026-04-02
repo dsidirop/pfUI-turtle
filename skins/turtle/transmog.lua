@@ -308,6 +308,8 @@ pfUI:RegisterSkin("Turtle Transmog UI", "vanilla", function()
         b.highlightee = f
 
         if not f.HookScript then f.HookScript = HookScript end
+        if not b.HookScript then b.HookScript = HookScript end
+
         local show, hide = f:GetScript("OnShow"), f:GetScript("OnLeave")
 
         local function onShow()
@@ -333,7 +335,6 @@ pfUI:RegisterSkin("Turtle Transmog UI", "vanilla", function()
         else
           b:SetScript("OnHide", onHide)
         end
-
 
         _G[borderSelectedName] = f.highlighter
       end
